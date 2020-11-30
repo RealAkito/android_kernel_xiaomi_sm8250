@@ -1600,3 +1600,54 @@ config HWCONF_MANAGER
 	help
          It provides all kinds of components configuration information and
          monitor values.
+
+menu "Xiaomi configuration options"
+
+config MACH_XIAOMI
+        bool "Xiaomi device"
+        depends on ARCH_QCOM
+        help
+          Support for Xiaomi products
+
+config MACH_XIAOMI_KONA
+        bool "Xiaomi Kona"
+        depends on ARCH_KONA
+        select MACH_XIAOMI
+        help
+          Support for SM8250-based Xiaomi variants
+
+menu "Xiaomi board selection"
+
+config MACH_XIAOMI_CMI
+	bool "polaris board"
+	select MACH_XIAOMI_KONA
+	help
+	  Support for Xiaomi Mi 10
+
+config MACH_XIAOMI_CAS
+        bool "polaris board"
+        select MACH_XIAOMI_KONA
+        help
+          Support for Xiaomi Mi 10
+
+config MACH_XIAOMI_UMI
+	bool "polaris board"
+	select MACH_XIAOMI_KONA
+	help
+	  Support for Xiaomi Mi 10
+
+config MACH_XIAOMI_LMI
+	bool "polaris board"
+	select MACH_XIAOMI_KONA
+	help
+	  Support for Xiaomi K30 Pro
+
+config MACH_XIAOMI_ALIOTH
+        bool "polaris board"
+        select MACH_XIAOMI_KONA
+        help
+          Support for Xiaomi K40
+
+endmenu
+
+endmenu
