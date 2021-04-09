@@ -42,6 +42,11 @@ struct persistent_ram_ecc_info {
 	uint16_t *par;
 };
 
+struct pmsg_start_t {
+       size_t         start;
+       spinlock_t     lock;
+};
+
 struct persistent_ram_zone {
 	phys_addr_t paddr;
 	size_t size;
