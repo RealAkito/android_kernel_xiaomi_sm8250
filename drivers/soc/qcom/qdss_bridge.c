@@ -515,8 +515,6 @@ static int mhi_ch_open(struct qdss_bridge_drvdata *drvdata)
 
 	return 0;
 err:
-	spin_lock_bh(&drvdata->lock);
-	spin_unlock_bh(&drvdata->lock);
 	return ret;
 }
 
